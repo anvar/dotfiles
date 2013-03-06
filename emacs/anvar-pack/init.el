@@ -5,15 +5,31 @@
 
 ;; Load bindings config
 (live-load-config-file "bindings.el")
-(setq live-disable-zone t) 
+(setq live-disable-zone t)
 (setq-default indent-tabs-mode nil)
 
 (global-set-key "\C-x\C-m" 'execute-extended-command)
 (global-set-key "\C-c\C-m" 'execute-extended-command)
 
-(global-set-key "\C-w" 'backward-kill-word)
-(global-set-key "\C-x\C-k" 'kill-region)
+;;(global-set-key "\M-w" 'backward-kill-word)
+;;(global-set-key "\C-x\C-k" 'kill-region)
 
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+
+(setq default-frame-alist '(
+                (width . 175)
+                (height . 55) ))
+
+(require 'clojure-mode)
+
+(define-clojure-indent
+  (defroutes 'defun)
+  (GET 2)
+  (POST 2)
+  (PUT 2)
+  (DELETE 2)
+  (HEAD 2)
+  (ANY 2)
+  (context 2))

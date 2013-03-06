@@ -1,8 +1,6 @@
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+ALIAS_HOME="$HOME/projects/misc/aliases"
+[[ -s "$ALIAS_HOME/git.sh" ]] && source "$ALIAS_HOME/git.sh"
+[[ -s "$ALIAS_HOME/maven.sh" ]] && source "$ALIAS_HOME/maven.sh"
+[[ -s "$ALIAS_HOME/system.sh" ]] && source "$ALIAS_HOME/system.sh"
 
-parse_git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\(\1\)/'
-}
-
-#PS1='\[\033[37m\]\w\[\033[00;35m\]$(parse_git_branch)\[\033[00m\] \$ '
 PS1='\h:\W \u$(parse_git_branch)\$ '
