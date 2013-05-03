@@ -27,6 +27,7 @@ alias grt='git_current_tracking > /dev/null && git rebase -i @{upstream}'
 alias grc='git rebase --continue'
 alias gp='git push'
 alias gpt='git push -u origin $(git_current_branch)'
+alias gum='git fetch --all && git rebase master'
 
 # helper for git aliases
 function parse_git_branch() {
