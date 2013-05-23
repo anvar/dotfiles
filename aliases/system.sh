@@ -1,5 +1,6 @@
 alias ll='ls -al'
 alias proj='cd ~/projects'
+alias psgrep='ps auxww|grep $1'
 
 function gg()
 {

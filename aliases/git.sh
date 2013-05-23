@@ -28,8 +28,15 @@ alias grc='git rebase --continue'
 alias gp='git push'
 alias gpt='git push -u origin $(git_current_branch)'
 alias gum='git fetch --all && git rebase master'
+alias gdiff='git whatchanged -p'
+alias grmb='git_remove_branch'
 
 # helper for git aliases
+function git_remove_branch()
+{
+  git push origin :$1
+  git branch -d $1
+}
 function parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\(\1\)/'
 }
