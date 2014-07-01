@@ -18,10 +18,10 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 
-;;(setq default-frame-alist '((top . 0)
-;;			    (left . 20)
-;;                            (width . 175)
-;;                            (height . 50)))
+(setq default-frame-alist '((top . 0)
+			    (left . 20)
+                            (width . 175)
+                            (height . 50)))
 
 (add-to-list 'auto-mode-alist '("\\.cu$" . c++-mode))
 
